@@ -22,4 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 //Get data from the database
-Route::get("list",[inventController::class,'list']);
+//Route::get("inventory",[inventController::class,'list']);
+// Geting specific values by id
+Route::get("inventory/{itemID?}",[inventController::class,'list']);

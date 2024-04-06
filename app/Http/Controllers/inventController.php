@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class inventController extends Controller
 {
-    function list(){
-        return item::all();
+    function list($itemID=null){
+        return $itemID? item::find($itemID):item::All();
     }
+   
 }
