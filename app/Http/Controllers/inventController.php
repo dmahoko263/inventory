@@ -8,8 +8,18 @@ use Illuminate\Http\Request;
 class inventController extends Controller
 {
     //fetch an item
-    function list($itemID=null){
-        return $itemID? item::find($itemID):item::All();
+    function list($name){
+        return item::where("iName","like","%".$name."%")->get();
+    }
+    
+      //fetch all items
+      function listAll(){
+        return item::All();
+    }
+
+      //fetch all items by id
+      function listById($id=null){
+        return $id? item::find($id):item::All();
     }
 
     //add an item
@@ -39,5 +49,16 @@ class inventController extends Controller
         }else {
             return ["Result"=>"Failed to update item"];
         }
+    }
+
+    // delete item by itemID
+    function delete($id)  {
+        $item=item::find($id);
+        $result=$item->delete();
+        if ($result) {
+            return ["Result"=>"Item deleted successfully"];
+         }else {
+             return ["Result"=>"Failed to delete item"];
+         }
     }
 }

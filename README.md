@@ -10,28 +10,28 @@
 ## About Inventory Manager
 
 Inventory Manager is an inventory management application I created using Laravel for the backend API and Flutter for the Frontend mobile App. It allows users to add, edit, and delete items and view and search items via APIs. This is a minimal project to showcase my Programming skills in these technologies
+The application support the following APIs
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Create
+- Read 
+- Update
+- Delete 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## How to Use the APIS
 
-## Learning Laravel
+- Create : Allows adding of iitems using the POST method on this route http://127.0.0.1:8000/api/inventory/add
+-  Read  :  Allows fetching all records using the GET method on this route http://127.0.0.1:8000/api/inventory/search/
+          or search by name http://127.0.0.1:8000/api/inventory/search/{name}
+          or search by id   http://127.0.0.1:8000/api/inventory/search/byitemID/{id}
+-  Update :  Allows updating of iitems using the PUT method on this route http://127.0.0.1:8000/api/inventory/update
+-  Delete :  Allows deleting of items using the DELETE method on this route http://127.0.0.1:8000/api/inventory/delete/itemID/{id}
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Database Schema
+Database name is Inventorydb
+Table name is items
+| itemID   | iName    | iDescription       | iQuantity|
+| ---      | ---      | ---                |---       |
+| 1        | Wadrobe  | 3 doors with mirror|2         |
 
 ### Premium Partners
 
