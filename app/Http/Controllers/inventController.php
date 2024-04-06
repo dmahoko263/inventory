@@ -21,9 +21,23 @@ class inventController extends Controller
         $item->iQuantity=$req->quantity;
         $result=$item->save();
         if ($result) {
-           return ["Result"=>"Item added successfully",$req->name];
+           return ["Result"=>"Item added successfully"];
         }else {
             return ["Result"=>"Failed to add item"];
+        }
+    }
+
+    //update an item
+    function update(Request $req)  {
+        $item=item::find($req->id);
+        $item->iName=$req->name;
+        $item->iDescription=$req->description;
+        $item->iQuantity=$req->quantity;
+        $result=$item->save();
+        if ($result) {
+           return ["Result"=>"Item updated successfully"];
+        }else {
+            return ["Result"=>"Failed to update item"];
         }
     }
 }
